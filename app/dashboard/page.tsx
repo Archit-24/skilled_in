@@ -2,6 +2,8 @@
 import { AppleCardsCarouselDemo } from '@/components/cardcarosel'
 import { FloatingDockDemo } from '@/components/fltdock'
 import { GoogleGeminiEffectDemo } from '@/components/gemini'
+import { LampDemo } from '@/components/GlowingLamp'
+import { InfiniteMovingCardsDemo } from '@/components/infiniteCards'
 import { MultiStepLoaderDemo } from '@/components/multistep'
 import { WavyBackgroundDemo } from '@/components/wvbg'
 import React from 'react'
@@ -14,9 +16,10 @@ function page() {
     <GoogleGeminiEffectDemo/>
     <FloatingDockDemo/>
     {/* <WavyBackgroundDemo/> */}
-    <AppleCardsCarouselDemo/>
+    {/* <AppleCardsCarouselDemo/> */}
+    <InfiniteMovingCardsDemo/>
+    <LampDemo/>
     <MultiStepLoaderDemo/>
-
     </>
   )
 }

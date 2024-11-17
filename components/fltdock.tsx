@@ -1,14 +1,19 @@
 import React from "react";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import {
+  IconBook,
   IconBrandGithub,
   IconBrandX,
   IconExchange,
+  IconHeartBolt,
   IconHome,
+  IconMessage,
   IconNewSection,
+  IconPlugConnected,
   IconTerminal2,
 } from "@tabler/icons-react";
 import Image from "next/image";
+import { div } from "framer-motion/client";
 
 export function FloatingDockDemo() {
   const links = [
@@ -17,64 +22,61 @@ export function FloatingDockDemo() {
       icon: (
         <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/dashboard",
     },
 
     {
-      title: "Products",
+      title: "Connect",
       icon: (
-        <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconPlugConnected className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/connect",
     },
     {
-      title: "Components",
+      title: "Chat",
       icon: (
-        <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconMessage className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/chat",
     },
     {
-      title: "Aceternity UI",
+      title: "Resources",
       icon: (
-        <Image
-          src="https://assets.aceternity.com/logo-dark.png"
-          width={20}
-          height={20}
-          alt="Aceternity Logo"
-        />
+        <IconBook className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/resources",
     },
     {
-      title: "Changelog",
+      title: "Events & Workshops",
       icon: (
-        <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconHeartBolt className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/events",
     },
 
-    {
-      title: "Twitter",
-      icon: (
-        <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-    {
-      title: "GitHub",
-      icon: (
-        <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
+    // {
+    //   title: "Twitter",
+    //   icon: (
+    //     <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    //   ),
+    //   href: "#",
+    // },
+    // {
+    //   title: "GitHub",
+    //   icon: (
+    //     <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    //   ),
+    //   href: "#",
+    // },
   ];
   return (
-    <div className="flex items-center justify-center h-[35rem] w-full">
+    // <div className="fixed top-0">
+    <div className="fixed top-[-190px] flex items-center justify-center h-[35rem] w-full">
       <FloatingDock
         mobileClassName="translate-y-20" // only for demo, remove for production
         items={links}
       />
     </div>
+    // </div>
   );
 }
