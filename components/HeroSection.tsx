@@ -1,6 +1,8 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 export function TypewriterEffectSmoothDemo() {
+  const router = useRouter();
   const words = [
     {
       text: "Welcome",
@@ -30,7 +32,7 @@ export function TypewriterEffectSmoothDemo() {
         <button className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm">
           Join now
         </button>
-        <button className="w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm">
+        <button onClick={()=>router.push('/sign-in')} className="cursor-pointer w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm">
           Sign In
         </button>
       </div>

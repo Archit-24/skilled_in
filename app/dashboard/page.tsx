@@ -11,10 +11,10 @@ import { useRef, useState } from "react"
 function page() {
   return (
     <>
-    <FloatingDockDemo/>
-    {/*<WavyBackgroundDemo/>}*/}
-    <AppleCardsCarouselDemo/>
     <GoogleGeminiEffectDemo/>
+    <FloatingDockDemo/>
+    {/* <WavyBackgroundDemo/> */}
+    <AppleCardsCarouselDemo/>
     <MultiStepLoaderDemo/>
 
     </>
