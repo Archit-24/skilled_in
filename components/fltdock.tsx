@@ -4,11 +4,14 @@ import {
   IconBook,
   IconBrandGithub,
   IconBrandX,
+  IconContract,
   IconExchange,
   IconHeartBolt,
   IconHome,
   IconMessage,
   IconNewSection,
+  IconPhoneDone,
+  IconPlane,
   IconPlugConnected,
   IconTerminal2,
 } from "@tabler/icons-react";
@@ -25,6 +28,13 @@ export function FloatingDockDemo() {
       href: "/dashboard",
     },
 
+    {
+      title: "About",
+      icon: (
+        <IconPlane className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/about",
+    },
     {
       title: "Connect",
       icon: (
@@ -54,20 +64,13 @@ export function FloatingDockDemo() {
       href: "/events",
     },
 
-    // {
-    //   title: "Twitter",
-    //   icon: (
-    //     <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    //   ),
-    //   href: "#",
-    // },
-    // {
-    //   title: "GitHub",
-    //   icon: (
-    //     <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    //   ),
-    //   href: "#",
-    // },
+    {
+      title: "Contact Us",
+      icon: (
+        <IconPhoneDone className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/contactus",
+    },
   ];
   return (
     // <div className="fixed top-0">
