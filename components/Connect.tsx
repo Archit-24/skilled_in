@@ -206,112 +206,72 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "Lana Del Rey",
-    title: "Summertime Sadness",
-    src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
-    ctaText: "Play",
+    description: "Name",
+    title: "Connection 1",
+    src: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+    ctaText: "Connect",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         <p>
-          Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-          her melancholic and cinematic music style. Born Elizabeth Woolridge
-          Grant in New York City, she has captivated audiences worldwide with
-          her haunting voice and introspective lyrics. <br /> <br /> Her songs
-          often explore themes of tragic romance, glamour, and melancholia,
-          drawing inspiration from both contemporary and vintage pop culture.
-          With a career that has seen numerous critically acclaimed albums, Lana
-          Del Rey has established herself as a unique and influential figure in
-          the music industry, earning a dedicated fan base and numerous
-          accolades.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dicta officia modi placeat quo? Culpa quaerat labore qui nemo eligendi? Quo numquam velit error itaque. Culpa veniam ex aliquid voluptate.
         </p>
       );
     },
   },
   {
-    description: "Babbu Maan",
-    title: "Mitran Di Chhatri",
-    src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
-    ctaText: "Play",
+    description: "Name",
+    title: "Connection 2",
+    src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    ctaText: "Connect",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         <p>
-          Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-          voice and profound lyrics that resonate deeply with his audience. Born
-          in the village of Khant Maanpur in Punjab, India, he has become a
-          cultural icon in the Punjabi music industry. <br /> <br /> His songs
-          often reflect the struggles and triumphs of everyday life, capturing
-          the essence of Punjabi culture and traditions. With a career spanning
-          over two decades, Babu Maan has released numerous hit albums and
-          singles that have garnered him a massive fan following both in India
-          and abroad.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint inventore sequi maiores consectetur corrupti dicta quidem, repellendus ullam, atque accusamus id esse impedit exercitationem voluptas laudantium eligendi rem quas sed!
         </p>
       );
     },
   },
 
   {
-    description: "Metallica",
-    title: "For Whom The Bell Tolls",
-    src: "https://assets.aceternity.com/demos/metallica.jpeg",
-    ctaText: "Play",
+    description: "Name",
+    title: "Connection 3",
+    src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    ctaText: "Connect",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         <p>
-          Metallica, an iconic American heavy metal band, is renowned for their
-          powerful sound and intense performances that resonate deeply with
-          their audience. Formed in Los Angeles, California, they have become a
-          cultural icon in the heavy metal music industry. <br /> <br /> Their
-          songs often reflect themes of aggression, social issues, and personal
-          struggles, capturing the essence of the heavy metal genre. With a
-          career spanning over four decades, Metallica has released numerous hit
-          albums and singles that have garnered them a massive fan following
-          both in the United States and abroad.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit incidunt eius enim, illum nisi, odio quam ratione maxime velit dolore reiciendis labore molestias minus quia debitis harum iure ut. Autem!
         </p>
       );
     },
   },
   {
-    description: "Led Zeppelin",
-    title: "Stairway To Heaven",
-    src: "https://assets.aceternity.com/demos/led-zeppelin.jpeg",
-    ctaText: "Play",
+    description: "Name",
+    title: "Connection 4",
+    src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    ctaText: "Connect",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         <p>
-          Led Zeppelin, a legendary British rock band, is renowned for their
-          innovative sound and profound impact on the music industry. Formed in
-          London in 1968, they have become a cultural icon in the rock music
-          world. <br /> <br /> Their songs often reflect a blend of blues, hard
-          rock, and folk music, capturing the essence of the 1970s rock era.
-          With a career spanning over a decade, Led Zeppelin has released
-          numerous hit albums and singles that have garnered them a massive fan
-          following both in the United Kingdom and abroad.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium nam, nostrum voluptates non illum est soluta in fugiat quibusdam asperiores eligendi dolores fuga nobis laboriosam dignissimos quisquam necessitatibus placeat ducimus.
         </p>
       );
     },
   },
   {
-    description: "Mustafa Zahid",
-    title: "Toh Phir Aao",
-    src: "https://assets.aceternity.com/demos/toh-phir-aao.jpeg",
-    ctaText: "Play",
+    description: "Name",
+    title: "Connection 5",
+    src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+    ctaText: "Connect",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         <p>
-          &quot;Aawarapan&quot;, a Bollywood movie starring Emraan Hashmi, is
-          renowned for its intense storyline and powerful performances. Directed
-          by Mohit Suri, the film has become a significant work in the Indian
-          film industry. <br /> <br /> The movie explores themes of love,
-          redemption, and sacrifice, capturing the essence of human emotions and
-          relationships. With a gripping narrative and memorable music,
-          &quot;Aawarapan&quot; has garnered a massive fan following both in
-          India and abroad, solidifying Emraan Hashmi&apos;s status as a
-          versatile actor.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nostrum inventore quos? Enim incidunt mollitia nemo itaque, beatae eum dolore doloremque cumque recusandae nisi vero voluptatum deserunt dignissimos, in ex!
         </p>
       );
     },

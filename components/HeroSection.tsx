@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 export function TypewriterEffectSmoothDemo() {
   const router = useRouter();
@@ -33,7 +34,7 @@ export function TypewriterEffectSmoothDemo() {
           Join now
         </button>
         <button onClick={()=>router.push('/sign-in')} className="cursor-pointer w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm">
-          Sign In
+          <Link href='/sign-in'> Sign In </Link>
         </button>
       </div>
     </div>
