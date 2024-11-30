@@ -2,7 +2,6 @@
 A Community Skill-Sharing Platform to foster inter-generational connection.
 
 ![img1](https://github.com/user-attachments/assets/ddac46a7-2a9c-4b6d-bef6-199d375dbcb3)
-![img2](https://github.com/user-attachments/assets/b7ca4ab9-128b-4249-8c24-e6bac48038e6)
 
 ## **Introduction**
 **SkilledIn** is a web-based platform designed to foster knowledge exchange and preserve cultural heritage within communities. It bridges generational gaps by enabling intergenerational learning, promoting traditional crafts, and encouraging the sharing of modern skills like digital literacy.  
@@ -22,6 +21,9 @@ The platform empowers individuals, strengthens community ties, and fosters a cul
 ---
 
 ## **Key Features**
+
+![img2](https://github.com/user-attachments/assets/b7ca4ab9-128b-4249-8c24-e6bac48038e6)
+
 - **Skill Categorization**: Easy-to-navigate categories for traditional and modern skills.  
 - **Matching System**: Connect learners and teachers based on skills and preferences.  
 - **Communication Tools**: Built-in messaging and scheduling for seamless interaction.
