@@ -1,6 +1,7 @@
 import React from "react";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import {
+  IconBodyScan,
   IconBook,
   IconBrandGithub,
   IconBrandX,
@@ -31,7 +32,7 @@ export function FloatingDockDemo() {
     {
       title: "About",
       icon: (
-        <IconPlane className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconBodyScan className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "/about",
     },
