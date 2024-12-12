@@ -31,9 +31,9 @@ export function TypewriterEffectSmoothDemo() {
       <TypewriterEffectSmooth words={words} />
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
         <button className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm">
-          Join now
+        <Link href='/sign-up'>Join now →</Link>
         </button>
-        <button onClick={()=>router.push('/sign-in')} className="cursor-pointer w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm">
+        <button className="cursor-pointer w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm">
           <Link href='/sign-in'> Sign In </Link>
         </button>
       </div>
