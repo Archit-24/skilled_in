@@ -37,12 +37,12 @@ export default function RootLayout({
         <body>
           
           {children}
-          <SignedOut>
+          {/* <SignedOut>
             <SignInButton />
           </SignedOut>
           <SignedIn>
             <UserButton showName/>
-          </SignedIn>
+          </SignedIn> */}
         </body>
       </html>
     </ClerkProvider>
