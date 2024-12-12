@@ -21,7 +21,7 @@ function page() {
     <>
     <GoogleGeminiEffectDemo/>
     <FloatingDockDemo/>
-    <UserButton/>
+    {/* <UserButton/> */}
     {/* <WavyBackgroundDemo/> */}
     {/* <AppleCardsCarouselDemo/> */}
     <InfiniteMovingCardsDemo/>
