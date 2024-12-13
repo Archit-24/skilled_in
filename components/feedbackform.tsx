@@ -8,6 +8,7 @@ import {
   IconBrandGoogle,
   IconBrandOnlyfans,
 } from "@tabler/icons-react";
+import FlipCard from "./animata/card/flipcard";
 
 export function SignupFormDemo() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -15,7 +16,8 @@ export function SignupFormDemo() {
     console.log("Form submitted");
   };
   return (
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+    // <div className="flex">
+    <div className="max-w-md w-full mt-20 ml-20 mb-10 rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Welcome to SkilledIn
       </h2>
@@ -95,6 +97,8 @@ export function SignupFormDemo() {
         </div> */}
       </form>
     </div>
+      // <FlipCard />
+    // </div>
   );
 }
 
