@@ -15,7 +15,12 @@ function page() {
     <div>
       <FloatingDockDemo/>
       <WorldMapDemo/>
-      <SignupFormDemo/>
+      <div className='flex items-center justify-center gap-20'>
+          <SignupFormDemo />
+      <div>
+          <FlipCard />
+      </div>
+            </div>
       {/* <GlobeDemo/> */}
       {/* <FileUploadDemo/>  */}
       {/* <FaqSection/> */}

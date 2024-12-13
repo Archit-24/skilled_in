@@ -20,8 +20,8 @@ function page() {
   return (
     <>
     <GoogleGeminiEffectDemo/>
+    {/* <UserButton/> */}
     <FloatingDockDemo/>
-    <UserButton/>
     {/* <WavyBackgroundDemo/> */}
     {/* <AppleCardsCarouselDemo/> */}
     <InfiniteMovingCardsDemo/>

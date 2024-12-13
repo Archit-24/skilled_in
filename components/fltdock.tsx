@@ -18,6 +18,7 @@ import {
 } from "@tabler/icons-react";
 import Image from "next/image";
 import { div } from "framer-motion/client";
+import { UserButton } from "@clerk/nextjs";
 
 export function FloatingDockDemo() {
   const links = [
@@ -75,11 +76,16 @@ export function FloatingDockDemo() {
   ];
   return (
     // <div className="fixed top-0">
-    <div className="fixed top-[-190px] flex items-center justify-center h-[35rem] w-full">
+    <div className="fixed top-[-190px] flex items-center h-[35rem] w-full">
+      
       <FloatingDock
         mobileClassName="translate-y-20" // only for demo, remove for production
         items={links}
-      />
+        />
+      
+      <div>
+        <UserButton showName/>
+      </div>
     </div>
     // </div>
   );
