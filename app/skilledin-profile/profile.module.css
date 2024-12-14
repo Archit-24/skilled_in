@@ -1,0 +1,66 @@
+/* styles/profile.module.css */
+
+.profileContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .profileHeader {
+    display: flex;
+    align-items: center;
+  }
+  
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .profileInfo {
+    margin-left: 20px;
+  }
+  
+  .name {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .email, .phone, .mobile, .address {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  .projects {
+    margin-top: 30px;
+  }
+  
+  .projectsTitle {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .project {
+    margin-bottom: 10px;
+  }
+  
+  .projectName {
+    font-size: 16px;
+  }
+  
+  .progressBar {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    height: 10px;
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 5px;
+  }
+  
