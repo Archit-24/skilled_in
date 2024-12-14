@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
 
@@ -7,7 +9,7 @@ type MenuItem = {
 };
 
 type FlowerMenuProps = {
-  menuItems: MenuItem[];
+  menuItems?: MenuItem[];
   iconColor?: string;
   backgroundColor?: string;
   animationDuration?: number;
@@ -144,7 +146,7 @@ const MenuItem = ({
 };
 
 export default function FlowerMenu({
-  menuItems,
+  menuItems = [],
   iconColor = "white",
   backgroundColor = "rgba(255, 255, 255, 0.2)",
   animationDuration = 500,
