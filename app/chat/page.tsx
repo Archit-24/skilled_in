@@ -6,7 +6,7 @@ function page() {
   return (
     <div>
         <FloatingDockDemo/>
-        {/* <PlaceholdersAndVanishInputDemo/> */}
+        <PlaceholdersAndVanishInputDemo/>
     </div>
   )
 }

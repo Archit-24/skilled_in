@@ -18,7 +18,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { User } from "lucide-react";
+import { DotIcon, User } from "lucide-react";
 
 export const FloatingDock = ({
   items,
@@ -196,8 +196,8 @@ function IconContainer({
         >
           {icon}
         </motion.div>
-      
       </motion.div>
+      
     </Link>
   );
 }
