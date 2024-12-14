@@ -5,8 +5,10 @@ import React from 'react'
 function page() {
   return (
     <div>
-      <FloatingDockDemo/>
-      <ExpandableCardDemo/>
+      <FloatingDockDemo />
+      <div className="mt-[150px]">
+        <ExpandableCardDemo />
+      </div>
     </div>
   )
 }

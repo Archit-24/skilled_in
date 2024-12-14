@@ -19,7 +19,7 @@ export default function Home() {
     <NavbarDemo />
     <TypewriterEffectSmoothDemo />
     <AnimatedTestimonialsDemo />
-    {/* <BackgroundLinesDemo /> */}
+    <BackgroundLinesDemo />
     <BackgroundBeamsWithCollisionDemo />
     </>
   );
