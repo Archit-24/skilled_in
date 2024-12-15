@@ -7,6 +7,7 @@ function page() {
     <div>
         <FloatingDockDemo/>
         <PlaceholdersAndVanishInputDemo/>
+        
     </div>
   )
 }
