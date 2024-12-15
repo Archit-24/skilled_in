@@ -33,7 +33,7 @@ const Profile: React.FC = () => {
         phone: '9876543210',
         mobile: '9876543210',
         address: 'Delhi, India',
-        skills: ['Next-JS'],
+        skills: ['Next-JS','TypeScript'],
         profileImage: '/images/Connect.jpg',
         projects: [
           { name: 'Web Design', status: 70 },
