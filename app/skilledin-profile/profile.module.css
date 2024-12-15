@@ -1,66 +1,153 @@
-/* styles/profile.module.css */
-
+/* General Container */
 .profileContainer {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .profileHeader {
-    display: flex;
-    align-items: center;
-  }
-  
-  .avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-right: 20px;
-  }
-  
-  .profileInfo {
-    margin-left: 20px;
-  }
-  
-  .name {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .email, .phone, .mobile, .address {
-    margin: 5px 0;
-    font-size: 16px;
-  }
-  
-  .projects {
-    margin-top: 30px;
-  }
-  
-  .projectsTitle {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .project {
-    margin-bottom: 10px;
-  }
-  
-  .projectName {
-    font-size: 16px;
-  }
-  
-  .progressBar {
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    height: 10px;
-    width: 100%;
-    margin-top: 5px;
-  }
-  
-  .progress {
-    height: 100%;
-    background-color: #4caf50;
-    border-radius: 5px;
-  }
-  
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Header */
+.profileHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.profileImageContainer {
+  position: relative;
+  margin-right: 20px;
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4caf50;
+}
+
+.imageChangeButton {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 8px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.imageChangeButton:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.imageInput {
+  display: none;
+}
+
+/* Profile Info */
+.profileInfo {
+  flex: 1;
+}
+
+
+/* Editable Inputs */
+.editable {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin: 5px 0;
+  padding: 5px 0;
+  width: 250px;
+}
+
+.editable:focus {
+  outline: none;
+  border-bottom: 2px solid #4caf50;
+}
+
+/* Editable Icon */
+.editIcon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px;
+  cursor: pointer;
+  color: #4caf50;
+  font-size: 18px;
+  transition: all 0.3s;
+}
+
+.editIcon:hover {
+  color: #45a049;
+}
+
+/* Skills Section */
+.skills {
+  margin-top: 50px;
+}
+
+.skills h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.skill input {
+  flex: 1;
+  font-size: 18px;
+  border: 2px solid #ddd;
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.skill input:focus {
+  border-color: #4caf50;
+}
+
+.addSkillButton {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: all 0.3s;
+}
+
+.addSkillButton:hover {
+  background-color: #45a049;
+}
+
+/* Save Button */
+.saveButton {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 30px;
+  transition: all 0.3s;
+}
+
+.saveButton:hover {
+  background-color: #45a049;
+}
