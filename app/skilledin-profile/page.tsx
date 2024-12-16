@@ -1,204 +1,351 @@
 "use client";
 
-import React, { useState } from 'react';
-import styles from './profile.module.css';
-import './global.css';
-import 'material-icons/iconfont/material-icons.css';
-
-
-interface Project {
-  name: string;
-  status: number;
-}
-
-interface User {
-  fullName: string;
-  email: string;
-  phone: string;
-  mobile: string;
-  address: string;
-  skills: string[];
-  profileImage: string;
-  projects: Project[];
-}
+import React, { useState, useEffect } from "react";
+import styles from "./profile.module.css";
+import "./global.css";
+import { FaEdit } from "react-icons/fa"; // Pencil icon for editing
 
 const Profile: React.FC = () => {
-  // Load user data from localStorage
-  const savedUserData = localStorage.getItem('userProfile');
-  const initialUser: User = savedUserData
-    ? JSON.parse(savedUserData)
-    : {
-        fullName: 'Archit Aggarwal',
-        email: 'info@skilledin.com',
-        phone: '9876543210',
-        mobile: '9876543210',
-        address: 'Delhi, India',
-        skills: ['Next-JS','TypeScript'],
-        profileImage: '/images/Connect.jpg',
-        projects: [
-          { name: 'Web Design', status: 70 },
-          { name: 'Website Markup', status: 60 },
-          { name: 'One Page', status: 90 },
-          { name: 'Mobile Template', status: 50 },
-          { name: 'Backend API', status: 40 },
-        ],
+  const initialProfile = {
+    fullName: "Archit Aggarwal",
+    headline: "Frontend Developer at TechCorp",
+    location: "Delhi, India",
+    about:
+      "Passionate Frontend Developer with a knack for creating user-friendly and visually appealing web applications.",
+    profileImage: "/images/Connect.jpg",
+    education: [
+      {
+        degree: "B.Tech in Computer Science",
+        institution: "IIT Delhi",
+        year: "2020",
+      },
+    ],
+    experience: [
+      {
+        role: "Frontend Developer",
+        company: "TechCorp",
+        duration: "Jan 2021 - Present",
+      },
+    ],
+    skills: ["React", "Next.js", "JavaScript"],
+    resources: [], // New section for uploaded resources
+  };
+
+  // const [user, setUser] = useState(() => {
+  //   const savedProfile = localStorage.getItem("userProfile");
+  //   const parsedProfile = savedProfile
+  //     ? JSON.parse(savedProfile)
+  //     : initialProfile;
+  //   return {
+  //     ...parsedProfile,
+  //     experience: parsedProfile.experience || [],
+  //     skills: parsedProfile.skills || [],
+  //     resources: parsedProfile.resources || [],
+  //     education: parsedProfile.education || [],
+  //   };
+  // });
+
+  // const [about, setAbout] = useState(
+  //   ""
+  // );
+  const [user, setUser] = useState(() => {
+    const savedProfile = localStorage.getItem("userProfile");
+    return savedProfile ? JSON.parse(savedProfile) : initialProfile;
+  });
+
+  const saveProfile = () => {
+    // Save the current user state to localStorage
+    localStorage.setItem("userProfile", JSON.stringify(user));
+    alert("Profile updated successfully!");
+  };
+
+  const handleFieldChange = (field: string, value: string) => {
+    setUser((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleArrayChange = (
+    section: string,
+    index: number,
+    key: string,
+    value: string
+  ) => {
+    const updatedSection = [...(user as any)[section]];
+    updatedSection[index][key] = value;
+    setUser({ ...user, [section]: updatedSection });
+  };
+
+  const handleAddItem = (section: string, newItem: any) => {
+    setUser({ ...user, [section]: [...(user as any)[section], newItem] });
+  };
+
+  const handleRemoveItem = (section: string, index: number) => {
+    const updatedSection = [...(user as any)[section]];
+    updatedSection.splice(index, 1);
+    setUser({ ...user, [section]: updatedSection });
+  };
+
+  const handleProfileImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setUser((prev) => ({ ...prev, profileImage: reader.result as string }));
       };
-
-  const [user, setUser] = useState<User>(initialUser);
-
-  // Handle input change
-  const handleChange = (field: string, value: string) => {
-    setUser((prevState) => ({
-      ...prevState,
-      [field]: value,
-    }));
-  };
-
-  // Handle skills change
-  const handleSkillsChange = (index: number, value: string) => {
-    const newSkills = [...user.skills];
-    newSkills[index] = value;
-    setUser({
-      ...user,
-      skills: newSkills,
-    });
-  };
-
-  // Add new skill
-  const handleAddSkill = () => {
-    setUser({
-      ...user,
-      skills: [...user.skills, ''],
-    });
-  };
-
-  // Handle profile image change
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files && event.target.files[0]) {
-      const fileReader = new FileReader();
-      fileReader.onload = (e) => {
-        setUser({
-          ...user,
-          profileImage: e.target?.result as string,
-        });
-      };
-      fileReader.readAsDataURL(event.target.files[0]);
+      reader.readAsDataURL(file);
     }
   };
 
-  // Save user data to localStorage
-  const saveToLocalStorage = (userData: User) => {
-    localStorage.setItem('userProfile', JSON.stringify(userData));
-  };
-
-  // Handle saving changes
-  const handleSaveChanges = () => {
-    saveToLocalStorage(user);
-    alert('Changes saved!');
+  const handleResourceUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        handleAddItem("resources", { name: file.name, content: reader.result });
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   return (
     <div className={styles.profileContainer}>
-      <div className={styles.profileHeader}>
-        <div className={styles.profileImageContainer}>
-          <img
-            src={user.profileImage}
-            alt="Profile"
-            className={styles.avatar}
-          />
-          <label htmlFor="imageInput" className={styles.imageChangeButton}>
-            <span className="material-icons">edit</span>
-          </label>
-          <input
-            type="file"
-            id="imageInput"
-            className={styles.imageInput}
-            onChange={handleImageChange}
-          />
-        </div>
-
-        <div className={styles.profileInfo}>
-          <h2>
+      {/* Header Section */}
+      <div className={styles.headerSection}>
+        <div className={styles.banner}></div>
+        <div className={styles.profileDetails}>
+          <div className={styles.profileImageContainer}>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleProfileImageChange}
+              className={styles.imageUpload}
+            />
+            <img
+              src={user.profileImage}
+              alt="Profile"
+              className={styles.profileImage}
+            />
+            {/* <FaEdit className={styles.editIcon} /> */}
+          </div>
+          <div className={styles.basicInfo}>
             <input
               type="text"
+              placeholder="Enter your FullName"
               value={user.fullName}
-              onChange={(e) => handleChange('fullName', e.target.value)}
-              className={styles.editable}
+              onChange={(e) => handleFieldChange("fullName", e.target.value)}
+              className={styles.editableInput}
             />
-            {/* <label className={styles.editIcon}>
-              <span className="material-icons">edit</span>
-            </label> */}
-          </h2>
-          <p>
-            <input
-              type="email"
-              value={user.email}
-              onChange={(e) => handleChange('email', e.target.value)}
-              className={styles.editable}
-            />
-            {/* <label className={styles.editIcon}>
-              <span className="material-icons">edit</span>
-            </label> */}
-          </p>
-          <p>
             <input
               type="text"
-              value={user.phone}
-              onChange={(e) => handleChange('phone', e.target.value)}
-              className={styles.editable}
+              placeholder="Enter your Headline"
+              value={user.headline}
+              onChange={(e) => handleFieldChange("headline", e.target.value)}
+              className={styles.editableInput}
             />
-            {/* <label className={styles.editIcon}>
-              <span className="material-icons">edit</span>
-            </label> */}
-          </p>
-          <p>
             <input
               type="text"
-              value={user.mobile}
-              onChange={(e) => handleChange('mobile', e.target.value)}
-              className={styles.editable}
+              placeholder="Enter your Location"
+              value={user.location}
+              onChange={(e) => handleFieldChange("location", e.target.value)}
+              className={styles.editableInput}
             />
-            {/* <label className={styles.editIcon}>
-              <span className="material-icons">edit</span>
-            </label> */}
-          </p>
-          <p>
-            <input
-              type="text"
-              value={user.address}
-              onChange={(e) => handleChange('address', e.target.value)}
-              className={styles.editable}
-            />
-            {/* <label className={styles.editIcon}>
-              <span className="material-icons">edit</span>
-            </label> */}
-          </p>
+          </div>
         </div>
       </div>
 
-      <div className={styles.skills}>
+      {/* About Section */}
+      <div className={styles.aboutSection}>
+        <h3>About</h3>
+        <textarea
+          placeholder="Tell us about yourself"
+          value={user.about}
+          onChange={(e) => handleFieldChange("about", e.target.value)}
+          className={styles.editableText}
+        />
+      </div>
+
+      {/* Education Section */}
+      <div className={styles.cardSection}>
+        <h3>Education</h3>
+        {(user.education || []).map((edu, index) => (
+          <div key={index} className={styles.card}>
+            <input
+              type="text"
+              placeholder="Enter your Course"
+              value={edu.degree}
+              onChange={(e) =>
+                handleArrayChange("education", index, "degree", e.target.value)
+              }
+              className={styles.editableInput}
+            />
+            <input
+              type="text"
+              placeholder="Enter your University"
+              value={edu.institution}
+              onChange={(e) =>
+                handleArrayChange(
+                  "education",
+                  index,
+                  "institution",
+                  e.target.value
+                )
+              }
+              className={styles.editableInput}
+            />
+            <input
+              type="text"
+              placeholder="Enter your Graduation Year"
+              value={edu.year}
+              onChange={(e) =>
+                handleArrayChange("education", index, "year", e.target.value)
+              }
+              className={styles.editableInput}
+            />
+            <button
+              className={styles.deleteButton}
+              onClick={() => handleRemoveItem("education", index)}
+            >
+              Delete
+            </button>
+          </div>
+        ))}
+        <button
+          className={styles.addButton}
+          onClick={() =>
+            handleAddItem("education", {
+              degree: "",
+              institution: "",
+              year: "",
+            })
+          }
+        >
+          Add Education
+        </button>
+      </div>
+
+      {/* Experience Section */}
+      <div className={styles.cardSection}>
+        <h3>Experience</h3>
+        {(user.experience || []).map((exp, index) => (
+          <div key={index} className={styles.card}>
+            <input
+              type="text"
+              placeholder="Enter your Job Title"
+              value={exp.role}
+              onChange={(e) =>
+                handleArrayChange("experience", index, "role", e.target.value)
+              }
+              className={styles.editableInput}
+            />
+            <input
+              type="text"
+              placeholder="Enter your Company Name"
+              value={exp.company}
+              onChange={(e) =>
+                handleArrayChange(
+                  "experience",
+                  index,
+                  "company",
+                  e.target.value
+                )
+              }
+              className={styles.editableInput}
+            />
+            <input
+              type="text"
+              placeholder="Enter your Job Duration"
+              value={exp.duration}
+              onChange={(e) =>
+                handleArrayChange(
+                  "experience",
+                  index,
+                  "duration",
+                  e.target.value
+                )
+              }
+              className={styles.editableInput}
+            />
+            <button
+              className={styles.deleteButton}
+              onClick={() => handleRemoveItem("experience", index)}
+            >
+              Delete
+            </button>
+          </div>
+        ))}
+        <button
+          className={styles.addButton}
+          onClick={() =>
+            handleAddItem("experience", { role: "", company: "", duration: "" })
+          }
+        >
+          Add Experience
+        </button>
+      </div>
+
+      {/* Skills Section */}
+      <div className={styles.cardSection}>
         <h3>Skills</h3>
-        {user.skills.map((skill, index) => (
-          <div key={index} className={styles.skill}>
+        {(user.skills || []).map((skill, index) => (
+          <div key={index} className={styles.skillItem}>
             <input
               type="text"
               value={skill}
-              onChange={(e) => handleSkillsChange(index, e.target.value)}
-              className={styles.editable}
+              onChange={(e) =>
+                handleArrayChange("skills", index, "", e.target.value)
+              }
+              className={styles.editableInput}
             />
-            {/* <label className={styles.editIcon}>
-              <span className="material-icons">edit</span>
-            </label> */}
+            <button
+              className={styles.deleteButton}
+              onClick={() => handleRemoveItem("skills", index)}
+            >
+              Delete
+            </button>
           </div>
         ))}
-        <button className={styles.addSkillButton} onClick={handleAddSkill}>
+        <button
+          className={styles.addButton}
+          onClick={() => handleAddItem("skills", "")}
+        >
           Add Skill
         </button>
       </div>
 
-      <button onClick={handleSaveChanges} className={styles.saveButton}>
-        Save Changes
-      </button>
+      {/* Resources Section */}
+      <div className={styles.cardSection}>
+        <h3>Resources</h3>
+        <input
+          type="file"
+          onChange={handleResourceUpload}
+          className={styles.fileInput}
+        />
+        <div className={styles.resourcesList}>
+          {(user.resources || []).map((resource, index) => (
+            <div key={index} className={styles.resourceItem}>
+              <a
+                href={resource.content}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {resource.name}
+              </a>
+              <button
+                className={styles.deleteButton}
+                onClick={() => handleRemoveItem("resources", index)}
+              >
+                Delete
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Save Button */}
+      <div className={styles.saveSection}>
+        <button className={styles.saveButton} onClick={saveProfile}>
+          Update Profile
+        </button>
+      </div>
     </div>
   );
 };
