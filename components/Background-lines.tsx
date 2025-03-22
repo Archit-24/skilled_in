@@ -8,9 +8,13 @@ export function BackgroundLinesDemo() {
         Technologies Used
       </h2>
       <div className="flex items-center justify-center space-x-8">
-        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/nextjs-icon.png" className="w-[85px] h-[85px]" />
-        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/typescript-programming-language-icon.png" className="w-[65px] h-[65px]" />
-        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/tailwind-css-icon.png" className="w-[85px] h-[85px]" />
+        <img src="/images/nextjs.png" className="w-[85px] h-[85px]" />
+        <img src="/images/ts.png" className="w-[65px] h-[65px]" />
+        <img src="/images/tailwind.png" className="w-[85px] h-[85px]" />
+        <img src="/images/calendar.png" className="w-[70px] h-[70px]" />
+        <img src="/images/meet.png" className="w-[65px] h-[65px]" />
+        <img src="/images/firebase.png" className="w-[80px] h-[80px]" />
+        <img src="/images/clerk.jpeg" className="w-[80px] h-[80px]" />
         </div>
       {/* <p className="max-w-xl mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-center">
         NextJS, TypeScript, TailwindCSS
