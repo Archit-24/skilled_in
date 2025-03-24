@@ -42,7 +42,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           Journey of the project
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          Working on SkilledIn for the past 2 months. Here&apos;s
+          Working on SkilledIn for the past 8 months. Here&apos;s
           a timeline of the journey.
         </p>
       </div>

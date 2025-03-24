@@ -112,6 +112,16 @@ const FloatingDockDesktop = ({
       {items.map((item) => (
         <IconContainer mouseX={mouseX} key={item.title} {...item} />
       ))}
+      <UserButton>
+        <UserButton.MenuItems>
+          {/* <UserButton.Link
+            label="SkilledIn Profile"
+            labelIcon={<ProfileIcon />}
+            href="/skilledin-profile"
+          /> */}
+          <UserButton.Action label="manageAccount" />
+        </UserButton.MenuItems>
+      </UserButton>
     </motion.div>
   );
 };

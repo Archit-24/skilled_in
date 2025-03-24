@@ -104,16 +104,6 @@ export function FloatingDockDemo() {
         mobileClassName="translate-y-20" // only for demo, remove for production
         items={links}
       />
-      <UserButton>
-        <UserButton.MenuItems>
-          <UserButton.Link
-            label="SkilledIn Profile"
-            labelIcon={<ProfileIcon />}
-            href="/skilledin-profile"
-          />
-          <UserButton.Action label="manageAccount" />
-        </UserButton.MenuItems>
-      </UserButton>
     </div>
 
     // </div>
