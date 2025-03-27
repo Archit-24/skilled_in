@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 
+
 export function AppleCardsCarouselDemo() {
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
@@ -11,8 +12,14 @@ export function AppleCardsCarouselDemo() {
   return (
     <div className="w-full h-full py-20">
       <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-        Events & Workshops
+        Events, Workshops & Live Classes
       </h2>
+      <p className="max-w-7xl pl-4 mx-auto text-lg md:text-xl text-neutral-600 dark:text-neutral-300 font-sans mt-4">
+        Seamlessly schedule your Events, Workshops, or Live Classes with
+        SkilledIn.
+      </p>
+      <div className='mt-[40px] ml-[135px]'>
+      </div>
       <Carousel items={cards} />
     </div>
   );
@@ -67,25 +74,6 @@ const data = [
     category: "Event 3",
     title: "Event Description.",
     src: "https://plus.unsplash.com/premium_photo-1661546333305-667b3326bb99?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-  },
-
-  {
-    category: "Event 4",
-    title: "Event Description.",
-    src: "https://images.unsplash.com/photo-1607969892435-1063b49bc963?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-  },
-  {
-    category: "Event 5",
-    title: "Event Description.",
-    src: "https://plus.unsplash.com/premium_photo-1677567996070-68fa4181775a?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-  },
-  {
-    category: "Event 6",
-    title: "Event Description.",
-    src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     content: <DummyContent />,
   },
 ];

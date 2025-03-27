@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { PlaceholdersAndVanishInput } from '../../components/ui/placeholder';
 
 // Define User type
 type User = {
@@ -41,13 +42,11 @@ export default function UserSearch() {
 
   return (
     <div className="max-w-lg mx-auto mt-10 p-6 border rounded-lg shadow-md bg-white">
-      {/* Search Input */}
-      <input
-        type="text"
-        placeholder="Search users..."
-        value={searchTerm}
+      {/* Search Input with Acertinity UI */}
+      <PlaceholdersAndVanishInput
+        placeholders={["Search users..."]}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        onSubmit={(e) => e.preventDefault()}
       />
 
       {/* Loading Spinner */}

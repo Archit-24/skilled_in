@@ -31,11 +31,21 @@ function Navbar({ className }: { className?: string }) {
           </div> */}
         </MenuItem>
         </HoveredLink>
-        <MenuItem setActive={setActive} active={active} item="About">
+        {/* <MenuItem setActive={setActive} active={active} item="About">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/platform">Our Platform & Team</HoveredLink>
           </div>
+        </MenuItem> */}
+        <HoveredLink href='/platform'>
+        <MenuItem setActive={setActive} active={active} item="Our Platform & Team">
+          {/* <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/hobby">Hobby</HoveredLink>
+            <HoveredLink href="/individual">Individual</HoveredLink>
+            <HoveredLink href="/team">Team</HoveredLink>
+            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+          </div> */}
         </MenuItem>
+        </HoveredLink>
         {/* <MenuItem setActive={setActive} active={active} item="Products">
           <div className="  text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem

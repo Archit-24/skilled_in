@@ -11,8 +11,6 @@ export default function CreateEventPage() {
   });
 
   const [meetLink, setMeetLink] = useState('');
-  const [eventLink, setEventLink] = useState('');
-  const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,40 +19,30 @@ export default function CreateEventPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    setError('');
 
-    try {
-      const startTime = `${formData.date}T${formData.time}:00+05:30`;
-      const endTime = new Date(new Date(startTime).getTime() + 60 * 60 * 1000).toISOString();
+    const startTime = `${formData.date}T${formData.time}:00+05:30`;
+    const endTime = new Date(new Date(startTime).getTime() + 60 * 60 * 1000).toISOString();
 
-      const response = await fetch('/api/create-event', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          summary: formData.summary,
-          description: formData.description,
-          startTime,
-          endTime,
-        }),
-      });
+    const response = await fetch('/api/create-event', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        summary: formData.summary,
+        description: formData.description,
+        startTime,
+        endTime,
+      }),
+    });
 
-      if (!response.ok) throw new Error('Failed to create event');
-
-      const data = await response.json();
-      console.log('API Response:', data);
-      
-      if (data.meetLink) setMeetLink(data.meetLink);
-      if (data.eventLink) setEventLink(data.eventLink);
-
-    } catch (err: any) {
-      console.error('Error creating event:', err);
-      setError('Failed to create event. Please try again.');
-    }
+    const data = await response.json();
+    console.log('API Response:', data);
+    if (data.meetLink) setMeetLink(data.meetLink);
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-10 p-6 border rounded-lg shadow-md bg-white">
-      <h1 className="text-xl font-bold mb-4">Create an Event</h1>
+    <div className="max-w-lg mx-auto mt-10 p-6 border rounded-lg shadow-lg bg-white">
+      <h1 className="text-2xl font-bold text-center text-gray-800 mb-4">📅 Create an Event</h1>
+      
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
@@ -63,7 +51,7 @@ export default function CreateEventPage() {
           value={formData.summary}
           onChange={handleChange}
           required
-          className="w-full p-2 border rounded"
+          className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
         />
         <textarea
           name="description"
@@ -71,7 +59,7 @@ export default function CreateEventPage() {
           value={formData.description}
           onChange={handleChange}
           required
-          className="w-full p-2 border rounded"
+          className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
         />
         <input
           type="date"
@@ -79,7 +67,7 @@ export default function CreateEventPage() {
           value={formData.date}
           onChange={handleChange}
           required
-          className="w-full p-2 border rounded"
+          className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
         />
         <input
           type="time"
@@ -87,18 +75,16 @@ export default function CreateEventPage() {
           value={formData.time}
           onChange={handleChange}
           required
-          className="w-full p-2 border rounded"
+          className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
         />
-        <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded">Create Event</button>
+        <button 
+          type="submit" 
+          className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+          🚀 Create Event
+        </button>
       </form>
 
-      {error && (
-        <div className="mt-4 p-2 bg-red-100 border border-red-300 text-red-700 rounded">
-          {error}
-        </div>
-      )}
-
-{meetLink && (
+      {meetLink && (
         <div className="mt-6 p-4 bg-green-100 border-l-4 border-green-500 rounded-lg shadow-md">
           <h2 className="text-lg font-semibold text-green-700">✅ Event Created Successfully!</h2>
           <p className="text-gray-700 mt-2">Here is your event link:</p>
@@ -116,7 +102,7 @@ export default function CreateEventPage() {
               📋 Copy
             </button>
           </div>
-          </div>
+        </div>
       )}
     </div>
   );
