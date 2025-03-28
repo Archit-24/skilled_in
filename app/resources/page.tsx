@@ -1,6 +1,6 @@
 import { FloatingDockDemo } from '@/components/fltdock'
 import { AnimatedPinDemo, AnimatedPinDemo1, AnimatedPinDemo2 } from '@/components/ResourcesPin'
-import { FileUploadDemo } from '@/components/Upload'
+import  FileUploadDemo  from '@/components/Upload'
 import React from 'react'
 
 function page() {
