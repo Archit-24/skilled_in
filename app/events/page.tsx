@@ -7,7 +7,7 @@ function page() {
   return (
     <>
       <FloatingDockDemo />
-      <div className="mt-[100px]">
+      <div className="mt-[200px]">
         <AppleCardsCarouselDemo />
       </div>
       {/* <Speeddial/> */}

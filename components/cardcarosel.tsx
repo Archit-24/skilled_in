@@ -1,10 +1,15 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 
-
 export function AppleCardsCarouselDemo() {
+  const [isFormVisible, setFormVisible] = useState(false); // Manage form visibility state
+
+  const toggleFormVisibility = () => {
+    setFormVisible(!isFormVisible);
+  };
+
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
   ));
@@ -18,8 +23,83 @@ export function AppleCardsCarouselDemo() {
         Seamlessly schedule your Events, Workshops, or Live Classes with
         SkilledIn.
       </p>
-      <div className='mt-[40px] ml-[135px]'>
+
+      {/* Button to open the form */}
+      <div className="mt-[40px] ml-[135px] mb-[100px]">
+        <button
+          onClick={toggleFormVisibility}
+          className="px-6 py-3 bg-blue-500 text-white rounded-lg"
+        >
+          Create Event
+        </button>
       </div>
+
+      {/* Form modal */}
+      {isFormVisible && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <h3 className="text-xl font-bold mb-4">Create a New Event</h3>
+            <form>
+              <div className="mb-4">
+                <label
+                  htmlFor="eventName"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Event Name
+                </label>
+                <input
+                  id="eventName"
+                  type="text"
+                  placeholder="Enter event name"
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="eventDate"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Event Date
+                </label>
+                <input
+                  id="eventDate"
+                  type="date"
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="eventDescription"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Event Description
+                </label>
+                <textarea
+                  id="eventDescription"
+                  placeholder="Enter event description"
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                />
+              </div>
+              <div className="flex justify-end space-x-4">
+                <button
+                  type="button"
+                  onClick={toggleFormVisibility}
+                  className="px-4 py-2 bg-gray-500 text-white rounded-md"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-blue-500 text-white rounded-md"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
       <Carousel items={cards} />
     </div>
   );

@@ -203,7 +203,7 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "Connection",
+    description: "Description 1",
     title: "Connection 1",
     src: "/images/Connect.jpg",
     ctaText: "Connect",
@@ -217,7 +217,7 @@ const cards = [
     },
   },
   {
-    description: "Connection",
+    description: "Description 2",
     title: "Connection 2",
     src: "/images/Connect.jpg",
     ctaText: "Connect",
@@ -232,7 +232,7 @@ const cards = [
   },
 
   {
-    description: "Connection",
+    description: "Description 3",
     title: "Connection 3",
     src: "/images/Connect.jpg",
     ctaText: "Connect",
@@ -245,46 +245,46 @@ const cards = [
       );
     },
   },
-  {
-    description: "Connection",
-    title: "Connection 4",
-    src: "/images/Connect.jpg",
-    ctaText: "Connect",
-    ctaLink: "",
-    content: () => {
-      return (
-        <p>
-          Connection Details.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Connection",
-    title: "Connection 5",
-    src: "/images/Connect.jpg",
-    ctaText: "Connect",
-    ctaLink: "",
-    content: () => {
-      return (
-        <p>
-          Connection Details.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Connection",
-    title: "Connection 6",
-    src: "/images/Connect.jpg",
-    ctaText: "Connect",
-    ctaLink: "",
-    content: () => {
-      return (
-        <p>
-          Connection Details.
-        </p>
-      );
-    },
-  }
+  // {
+  //   description: "Connection",
+  //   title: "Connection 4",
+  //   src: "/images/Connect.jpg",
+  //   ctaText: "Connect",
+  //   ctaLink: "",
+  //   content: () => {
+  //     return (
+  //       <p>
+  //         Connection Details.
+  //       </p>
+  //     );
+  //   },
+  // },
+  // {
+  //   description: "Connection",
+  //   title: "Connection 5",
+  //   src: "/images/Connect.jpg",
+  //   ctaText: "Connect",
+  //   ctaLink: "",
+  //   content: () => {
+  //     return (
+  //       <p>
+  //         Connection Details.
+  //       </p>
+  //     );
+  //   },
+  // },
+  // {
+  //   description: "Connection",
+  //   title: "Connection 6",
+  //   src: "/images/Connect.jpg",
+  //   ctaText: "Connect",
+  //   ctaLink: "",
+  //   content: () => {
+  //     return (
+  //       <p>
+  //         Connection Details.
+  //       </p>
+  //     );
+  //   },
+  // }
 ];

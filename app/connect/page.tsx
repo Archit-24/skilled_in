@@ -72,11 +72,11 @@ function ConnectPage() {
   return (
     <div>
       <FloatingDockDemo />
-      <div className="mt-[150px]">
+      <div className="mt-[250px]">
         <ExpandableCardDemo />
       </div>
 
-      <div className="max-w-3xl mx-auto mt-10 p-5 bg-white shadow-md rounded-lg">
+      {/* <div className="max-w-3xl mx-auto mt-10 p-5 bg-white shadow-md rounded-lg">
         <h2 className="text-2xl font-bold mb-5">People You May Know</h2>
         {users.map((usr) => (
           <div key={usr.id} className="flex justify-between items-center p-3 border-b">
@@ -103,7 +103,7 @@ function ConnectPage() {
             </button>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
